@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.modelo;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.naming.OperationNotSupportedException;
@@ -12,7 +13,7 @@ import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Reserva;
 public interface IModelo {
 
 	void comenzar();
-	
+
 	void terminar();
 
 	List<Aula> getAulas();
@@ -52,6 +53,12 @@ public interface IModelo {
 	List<Reserva> getReservasProfesor(Profesor profesor);
 
 	List<Reserva> getReservasPermanencia(Permanencia permanencia);
+
+	List<Reserva> getReservas(Profesor profesor);
+
+	List<Reserva> getReservas(Aula aula);
+
+	List<Reserva> getReservas(LocalDate fechaPrestamo);
 
 	boolean consultarDisponibilidad(Aula aula, Permanencia permanencia);
 

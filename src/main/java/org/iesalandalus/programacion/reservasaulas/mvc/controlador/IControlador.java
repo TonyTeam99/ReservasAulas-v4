@@ -1,5 +1,6 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.controlador;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.naming.OperationNotSupportedException;
@@ -15,9 +16,9 @@ public interface IControlador {
 
 	void terminar();
 
-	void insertarAula(Aula aula)  throws OperationNotSupportedException ;
+	void insertarAula(Aula aula) throws OperationNotSupportedException;
 
-	void insertarProfesor(Profesor profesor) throws OperationNotSupportedException ;
+	void insertarProfesor(Profesor profesor) throws OperationNotSupportedException;
 
 	void borrarAula(Aula aula) throws OperationNotSupportedException;
 
@@ -42,6 +43,18 @@ public interface IControlador {
 	List<Reserva> getReservasProfesor(Profesor profesor);
 
 	List<Reserva> getReservasPremanencia(Permanencia permanencia);
+
+	List<Profesor> getProfesores();
+
+	List<Aula> getAulas();
+
+	List<Reserva> getReservas();
+
+	List<Reserva> getReservas(Profesor profesor);
+
+	List<Reserva> getReservas(Aula aula);
+
+	List<Reserva> getReservas(LocalDate fecha);
 
 	boolean consultarDisponibilidad(Aula aula, Permanencia permanencia);
 
