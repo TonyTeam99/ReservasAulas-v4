@@ -19,7 +19,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -93,11 +92,9 @@ public class ControladorStagePrincipal {
 	private TableColumn<Reserva, String> tcPuntos;
 	@FXML
 	private DatePicker dpMes;
+
 	@FXML
 	private CheckBox cbMes;
-	@FXML
-	private Label primeroESO;
-
 	private Stage anadirProfesor;
 	private ControladorAnadirProfesor cAnadirProfesor;
 	private Stage anadirAula;
@@ -273,7 +270,7 @@ public class ControladorStagePrincipal {
 	public void actualizaAulas() {
 		reservasAulas.clear();
 		tvAulas.getSelectionModel().clearSelection();
-		profesores.setAll(controladorMVC.getProfesores());
+		aulas.setAll(controladorMVC.getAulas());
 	}
 
 //Reservas

@@ -44,6 +44,9 @@ public class VistaGrafica extends Application implements IVista {
 			VBox raiz = cargadorVentanaPrincipal.load();
 			ControladorStagePrincipal cVentanaPrincipal = cargadorVentanaPrincipal.getController();
 			cVentanaPrincipal.setControladorMVC(controladorMVC);
+			cVentanaPrincipal.actualizaAulas();
+			cVentanaPrincipal.actualizaProfesores();
+			cVentanaPrincipal.actualizaReservas();
 
 			Scene escena = new Scene(raiz);
 			escenarioPrincipal.setOnCloseRequest(e -> confirmarSalida(escenarioPrincipal, e));
